@@ -9,13 +9,15 @@ import {MyTelComponent} from './my-tel/my-tel.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { CustomStepperComponent } from './custom-stepper/custom-stepper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyTelComponent,
     DynamicFormComponent,
-    DynamicFormQuestionComponent
+    DynamicFormQuestionComponent,
+    CustomStepperComponent
   ],
   imports: [
     BrowserModule,

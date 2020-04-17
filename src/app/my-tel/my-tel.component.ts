@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-my-tel',
   templateUrl: './my-tel.component.html',
-  styleUrls: ['./my-tel.component.scss']
+  styleUrls: ['./my-tel.component.scss'],
 })
 export class MyTelComponent implements OnInit {
   parts: FormGroup;
