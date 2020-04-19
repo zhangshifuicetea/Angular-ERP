@@ -6,14 +6,9 @@
 .nav-item {
   line-height: 42px;
   margin: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  max-height: 900px;
   user-select: none;
   transition: all 0.2s ease;
-  &.hide {
-    max-height: 0;
-  }
+  white-space: nowrap;
   .title {
     cursor: pointer;
     display: flex;
@@ -25,5 +20,19 @@
       align-items: center;
     }
   }
+  .rotate-up {
+    transform: rotate(180deg);
+  }
+}
 
+.nav-children {
+  overflow: hidden;
+  max-height: 900px;
+  &.hide {
+    max-height: 0;
+  }
+}
+
+.transition-all {
+  transition: all 0.2s ease;
 }

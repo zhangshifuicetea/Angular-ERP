@@ -9,7 +9,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content [style.margin-left.px]="navExpanded ? 200 : 60" class="transition-all">
+  <mat-sidenav-content [style.margin-left.px]="isMobile ? 0 : (navExpanded ? 200 : 60)" class="transition-all">
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -27,14 +27,16 @@
         <span>{{item.title}}</span>
       </div>
       <div class="right">
-        <mat-icon *ngIf="item.children?.length">expand_more</mat-icon>
+        <mat-icon *ngIf="item.children?.length" class="transition-all" [class.rotate-up]="item.expand">expand_more</mat-icon>
       </div>
     </div>
 
-    <div class="nav-item" *ngIf="item.children?.length " [class.hide]="!item.expand">
-      <div class="title" *ngFor="let link of item.children" (click)="clickItem(link)" matRipple>
-        <div class="left">
-          <span style="margin-left: 34px;">{{link.title}}</span>
+    <div class="nav-children" [class.hide]="!item.expand">
+      <div class="nav-item" *ngFor="let link of item.children">
+        <div class="title" (click)="clickItem(link)" matRipple>
+          <div class="left">
+            <span style="margin-left: 34px;">{{link.title}}</span>
+          </div>
         </div>
       </div>
     </div>
