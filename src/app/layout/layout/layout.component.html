@@ -1,0 +1,5 @@
+<app-header class="app-header" (toggleSidebar)="toggleSidebar()"></app-header>
+
+<app-sidebar class="app-sidebar" [style.marginTop.px]="isMobile ? 56 : 0" [isMobile]="isMobile">
+  <ng-content></ng-content>
+</app-sidebar>

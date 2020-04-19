@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding: 10px 0;
+}
+
+.nav-item {
+  line-height: 42px;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  max-height: 900px;
+  user-select: none;
+  transition: all 0.2s ease;
+  &.hide {
+    max-height: 0;
+  }
+  .title {
+    cursor: pointer;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    .left, .right {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+}

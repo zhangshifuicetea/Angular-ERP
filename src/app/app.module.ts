@@ -6,8 +6,9 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './services/in-memory-data.service';
+import {InMemoryDataService} from './core/data/in-memory-data.service';
 import { DashboardModule } from './features/dashboard/dashboard.module';
+import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DashboardModule } from './features/dashboard/dashboard.module';
         put204: false,
       }
     ),
+    LayoutModule,
     DashboardModule,
     AppRoutingModule,
   ],

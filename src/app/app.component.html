@@ -1,5 +1,3 @@
-<h3>{{title}}</h3>
-<div>{{customers$ | async | json}}</div>
-<button (click)="fetchCustomers()">customers</button>
-<button (click)="addCustomer('newCustomer')">add</button>
-<router-outlet></router-outlet>
+<app-layout [class.is-mobile]="mobileQuery.matches" [isMobile]="mobileQuery.matches">
+  <router-outlet></router-outlet>
+</app-layout>

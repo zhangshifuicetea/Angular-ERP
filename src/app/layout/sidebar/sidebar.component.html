@@ -1,0 +1,15 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #desksidebar mode="side" opened *ngIf="!isMobile" class="transition-all" [style.width.px]="navExpanded ? 200 : 60">
+    <app-side-nav-list [expanded]="navExpanded" [navList]="sideNavList"></app-side-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav #mobilesidebar mode="over" fixedInViewport fixedTopGap="56" *ngIf="isMobile">
+    <mat-nav-list>
+      <a mat-list-item routerLink="."></a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content [style.margin-left.px]="navExpanded ? 200 : 60" class="transition-all">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

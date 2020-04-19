@@ -1,0 +1,46 @@
+<!--<mat-nav-list *ngIf="navExpanded">-->
+<!--  <ng-container *ngFor="let item of sideNavList">-->
+<!--    <mat-list-item>-->
+<!--      <mat-icon class="nav-icon" matlisticon>{{item.icon}}</mat-icon>-->
+<!--      <span style="margin-left: 10px">{{item.title}}</span>-->
+<!--    </mat-list-item>-->
+<!--    <mat-nav-list *ngIf="item.children?.length">-->
+<!--      <a *ngFor="let link of item.children" mat-list-item [routerLink]="[item.path + '/' + link.path]">-->
+<!--        <span style="padding-left: 30px;">{{link.title}}</span>-->
+<!--      </a>-->
+<!--    </mat-nav-list>-->
+<!--  </ng-container>-->
+
+<!--</mat-nav-list>-->
+
+<!--<mat-nav-list *ngIf="!navExpanded">-->
+<!--  <mat-list-item *ngFor="let item of sideNavList">-->
+<!--    <mat-icon class="nav-icon" matlisticon>{{item.icon}}</mat-icon>-->
+<!--  </mat-list-item>-->
+<!--</mat-nav-list>-->
+
+<ng-container *ngIf="expanded">
+  <div class="nav-item" *ngFor="let item of navList">
+    <div class="title" (click)="clickItem(item)" matRipple>
+      <div class="left">
+        <mat-icon style="margin-right: 10px;">{{item.icon}}</mat-icon>
+        <span>{{item.title}}</span>
+      </div>
+      <div class="right">
+        <mat-icon *ngIf="item.children?.length">expand_more</mat-icon>
+      </div>
+    </div>
+
+    <div class="nav-item" *ngIf="item.children?.length " [class.hide]="!item.expand">
+      <div class="title" *ngFor="let link of item.children" (click)="clickItem(link)" matRipple>
+        <div class="left">
+          <span style="margin-left: 34px;">{{link.title}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!expanded">
+
+</ng-container>
