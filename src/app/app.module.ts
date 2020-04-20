@@ -9,10 +9,16 @@ import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './core/data/in-memory-data.service';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import {LayoutModule} from './layout/layout.module';
+import { LoginComponent } from './features/passport/login/login.component';
+import { RegisterComponent } from './features/passport/register/register.component';
+import { RegisterResultComponent } from './features/passport/register-result/register-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    RegisterResultComponent,
   ],
   imports: [
     BrowserModule,

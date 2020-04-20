@@ -6,13 +6,15 @@ import {LayoutComponent} from './layout/layout.component';
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import { SideNavListComponent } from './side-nav-list/side-nav-list.component';
+import { PassportComponent } from './passport/passport.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SidebarComponent,
     LayoutComponent,
-    SideNavListComponent
+    SideNavListComponent,
+    PassportComponent
   ],
   imports: [
     CommonModule,

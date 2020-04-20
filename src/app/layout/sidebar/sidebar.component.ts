@@ -45,7 +45,8 @@ const navList: SideNavItem[] = [
     icon: 'local_offer',
     expand: false,
     children: [
-      {title: '产品维护', path: 'products/maintain', link: true}
+      {title: '产品维护', path: 'products/maintain', link: true},
+      {title: '登出', path: 'passport/login', link: true},
     ]
   },
 ];
