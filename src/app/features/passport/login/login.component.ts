@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../core/auth.service';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,23 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  get isLoggedIn() {
-    return this.authService.isLoggedIn;
-  }
+  loginForm: FormGroup;
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    private fb: FormBuilder,
   ) { }
 
   ngOnInit(): void {
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
 
   login() {
@@ -25,12 +33,5 @@ export class LoginComponent implements OnInit {
       const redirectUrl = this.authService.redirectUrl || '/';
       this.router.navigate([redirectUrl]);
     });
-
-
   }
-
-  logout() {
-    this.authService.logout();
-  }
-
 }

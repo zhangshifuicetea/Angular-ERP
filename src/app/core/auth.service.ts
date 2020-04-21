@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {delay, tap} from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn = false;
+  isLoggedIn = true;
   redirectUrl: string;
 
-  constructor() { }
+  authToken: string;
+
+  constructor(
+    private router: Router
+  ) { }
 
   login(): Observable<boolean> {
     return of(true).pipe(
@@ -19,6 +24,8 @@ export class AuthService {
   }
 
   logout() {
+    this.authToken = this.redirectUrl = undefined;
     this.isLoggedIn = false;
+    this.router.navigate(['/passport/login']);
   }
 }

@@ -8,6 +8,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const material = [
   MatCommonModule,
@@ -18,6 +25,13 @@ const material = [
   MatToolbarModule,
   MatListModule,
   MatRippleModule,
+  MatTooltipModule,
+  MatMenuModule,
+  MatDividerModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCheckboxModule,
 ];
 
 @NgModule({
@@ -25,6 +39,7 @@ const material = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    ...material,
   ],
   exports: [
     ReactiveFormsModule,

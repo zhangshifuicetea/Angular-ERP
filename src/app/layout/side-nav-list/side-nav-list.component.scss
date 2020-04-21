@@ -4,12 +4,12 @@
 }
 
 .nav-item {
-  line-height: 42px;
   margin: 0;
   user-select: none;
   transition: all 0.2s ease;
   white-space: nowrap;
   .title {
+    height: 42px;
     cursor: pointer;
     display: flex;
     padding: 0 10px;
@@ -18,6 +18,9 @@
     .left, .right {
       display: flex;
       align-items: center;
+    }
+    &.active {
+      color: royalblue;
     }
   }
   .rotate-up {

@@ -1,3 +1,27 @@
 .app-name {
   margin-left: 10px;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 30px;
+    border-radius: 50%;
+  }
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 24px;
+    color: #fff;
+  }
+}

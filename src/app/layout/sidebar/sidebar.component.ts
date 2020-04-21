@@ -34,8 +34,14 @@ export class SidebarComponent implements OnInit {
 
 const navList: SideNavItem[] = [
   {
+    title: '首页',
+    path: '/dashboard',
+    icon: 'home',
+    link: true,
+  },
+  {
     title: '客户',
-    path: 'customers',
+    path: '/customers',
     icon: 'group',
     link: true,
   },
@@ -45,8 +51,7 @@ const navList: SideNavItem[] = [
     icon: 'local_offer',
     expand: false,
     children: [
-      {title: '产品维护', path: 'products/maintain', link: true},
-      {title: '登出', path: 'passport/login', link: true},
+      {title: '产品维护', path: '/products/maintain', link: true},
     ]
   },
 ];
