@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const material = [
   MatCommonModule,
@@ -32,6 +33,7 @@ const material = [
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
+  MatGridListModule,
 ];
 
 @NgModule({

@@ -7,11 +7,22 @@
   <a mat-icon-button class="github" href="https://github.com/zhangshifuicetea/Angular-ERP" target="_blank" rel="noopener">
     <img src="assets/images/github.svg" class="github">
   </a>
-  <button mat-button class="avatar">
+  <button mat-icon-button (click)="fullscreen()" matTooltip="全屏">
+    <mat-icon *ngIf="!isFullscreen">fullscreen</mat-icon>
+    <mat-icon *ngIf="isFullscreen">fullscreen_exit</mat-icon>
+  </button>
+  <button mat-button class="avatar" [matMenuTriggerFor]="logoutmenu">
     <img src="assets/images/avatar.jpg">
      张师傅
   </button>
-  <button mat-icon-button (click)="logout()">
-    <mat-icon>exit_to_app</mat-icon>
-  </button>
+  <mat-menu #logoutmenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>个人信息</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>登出</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>

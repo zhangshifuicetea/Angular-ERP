@@ -23,7 +23,7 @@
   <div class="nav-item" *ngFor="let item of navList">
     <div class="title" [class.active]="selectedPath === item.path" (click)="clickItem(item, $event)" matRipple>
       <div class="left">
-        <mat-icon style="margin-right: 10px;">{{item.icon}}</mat-icon>
+        <mat-icon fontSet="material-icons-outlined" style="margin-right: 10px;">{{item.icon}}</mat-icon>
         <span>{{item.title}}</span>
       </div>
       <div class="right">
@@ -49,14 +49,14 @@
     <div class="title" [class.active]="selectedPath === item.path" (click)="clickItem(item, $event)" matRipple
          [matMenuTriggerFor]="menu" *ngIf="item.children?.length">
       <div class="left">
-        <mat-icon style="margin-right: 10px;">{{item.icon}}</mat-icon>
+        <mat-icon fontSet="material-icons-outlined" style="margin-right: 10px;">{{item.icon}}</mat-icon>
       </div>
     </div>
 
     <div class="title" [class.active]="selectedPath === item.path" (click)="clickItem(item, $event)" matRipple
          *ngIf="!item.children?.length">
       <div class="left">
-        <mat-icon style="margin-right: 10px;">{{item.icon}}</mat-icon>
+        <mat-icon fontSet="material-icons-outlined" style="margin-right: 10px;">{{item.icon}}</mat-icon>
       </div>
     </div>
 
