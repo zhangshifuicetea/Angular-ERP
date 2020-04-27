@@ -12,8 +12,8 @@ import {LayoutModule} from './layout/layout.module';
 import { LoginComponent } from './features/passport/login/login.component';
 import { RegisterComponent } from './features/passport/register/register.component';
 import { RegisterResultComponent } from './features/passport/register-result/register-result.component';
-import {MAT_TOOLTIP_SCROLL_STRATEGY} from '@angular/material/tooltip';
 import {SharedModule} from './shared/shared.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import {SharedModule} from './shared/shared.module';
         put204: false,
       }
     ),
+    FlexLayoutModule,
     SharedModule,
     LayoutModule,
     DashboardModule,
