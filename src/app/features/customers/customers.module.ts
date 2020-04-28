@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersComponent } from './customers.component';
-import {FlexModule} from '@angular/flex-layout';
+import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [CustomersComponent],
-    imports: [
-        CommonModule,
-        CustomersRoutingModule,
-        FlexModule
-    ]
+  imports: [
+    CommonModule,
+    CustomersRoutingModule,
+    FlexLayoutModule
+  ]
 })
 export class CustomersModule { }
