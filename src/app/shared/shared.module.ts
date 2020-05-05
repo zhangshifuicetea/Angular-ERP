@@ -16,7 +16,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { AutoSizeDirective } from './auto-size.directive';
 
 const material = [
   MatCommonModule,
@@ -38,7 +37,7 @@ const material = [
 ];
 
 @NgModule({
-  declarations: [AutoSizeDirective],
+  declarations: [],
   imports: [
     CommonModule,
     ReactiveFormsModule,
