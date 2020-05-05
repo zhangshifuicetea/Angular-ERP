@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const material = [
   MatCommonModule,
@@ -34,6 +35,7 @@ const material = [
   MatInputModule,
   MatCheckboxModule,
   MatGridListModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({

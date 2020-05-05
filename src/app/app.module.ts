@@ -14,6 +14,7 @@ import { RegisterComponent } from './features/passport/register/register.compone
 import { RegisterResultComponent } from './features/passport/register-result/register-result.component';
 import {SharedModule} from './shared/shared.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {httpInterceptorProviders} from './core/interceptors';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     AppRoutingModule,
   ],
   providers: [
+    httpInterceptorProviders,
   ],
   bootstrap: [AppComponent]
 })
