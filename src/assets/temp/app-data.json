@@ -1,0 +1,11 @@
+{
+  "app": {
+    "name": "Angular-ERP",
+    "description": "Enterprise Resource Planning based on Angular"
+  },
+  "user": {
+    "name": "张师傅",
+    "avatar": "assets/images/avatar.jpg",
+    "email": "tiejiayrz@outlook.com"
+  }
+}

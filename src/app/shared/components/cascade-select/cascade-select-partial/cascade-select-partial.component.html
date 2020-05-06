@@ -1,0 +1,10 @@
+<mat-form-field style="margin-right: 10px;">
+  <mat-select [value]="selectedOption" (valueChange)="select($event)">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{option[labelKey]}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-cascade-select-partial [labelKey]="labelKey" [options]="selectedOption?.children" *ngIf="selectedOption?.children?.length > 0">
+</app-cascade-select-partial>

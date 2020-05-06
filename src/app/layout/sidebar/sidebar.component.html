@@ -1,4 +1,6 @@
-<mat-sidenav-container class="sidenav-container">
+<app-header class="app-header" [class.is-mobile]="isMobile" (toggleSidebar)="toggle()"></app-header>
+
+<mat-sidenav-container class="sidenav-container" [class.is-mobile]="isMobile">
   <mat-sidenav #desksidebar mode="side" opened *ngIf="!isMobile" class="transition-all" [style.width.px]="navExpanded ? 210 : 50">
     <app-side-nav-list [expanded]="navExpanded" [navList]="sideNavList"></app-side-nav-list>
   </mat-sidenav>

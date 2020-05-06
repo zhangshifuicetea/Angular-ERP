@@ -17,6 +17,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { CascadeSelectComponent } from './components/cascade-select/cascade-select.component';
+import { CascadeSelectPartialComponent } from './components/cascade-select/cascade-select-partial/cascade-select-partial.component';
+import {MatSelectModule} from '@angular/material/select';
 
 const material = [
   MatCommonModule,
@@ -36,10 +39,14 @@ const material = [
   MatCheckboxModule,
   MatGridListModule,
   MatProgressBarModule,
+  MatSelectModule,
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CascadeSelectComponent,
+    CascadeSelectPartialComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -48,6 +55,7 @@ const material = [
   exports: [
     ReactiveFormsModule,
     ...material,
+    CascadeSelectComponent
   ]
 })
 export class SharedModule { }

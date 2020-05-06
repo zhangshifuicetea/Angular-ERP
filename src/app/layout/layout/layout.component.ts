@@ -11,10 +11,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   mobileQueryListener: () => void;
 
-  @ViewChild(SidebarComponent) sidebar: SidebarComponent;
-
-  @HostBinding('class.is-mobile') classMobil = false;
-
   constructor( cdr: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQueryListener = () => cdr.detectChanges();
@@ -22,15 +18,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.classMobil = this.mobileQuery.matches;
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this.mobileQueryListener);
-  }
-
-  toggleSidebar() {
-    this.sidebar.toggle();
   }
 
 }

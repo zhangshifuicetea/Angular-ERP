@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
       this.mobileSidebar.toggle();
     } else {
       this.navExpanded = !this.navExpanded;
-      this.cdr.detectChanges();
+      // this.cdr.detectChanges();
     }
   }
 
