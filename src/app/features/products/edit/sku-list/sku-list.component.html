@@ -1,0 +1,21 @@
+<mat-form-field appearance="fill">
+  <mat-label>属性</mat-label>
+  <mat-select multiple [value]="selectedAttrs" (valueChange)="attributesChange($event)">
+    <mat-option *ngFor="let attr of attributes" [value]="attr">{{attr}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field style="max-width: 600px;" *ngFor="let attr of attributeValues" appearance="fill">
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let value of attr.values"
+              [removable]="true" (removed)="removeChip(attr, value)">
+      {{value}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <input [placeholder]="attr.type"
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="true"
+           (matChipInputTokenEnd)="addChip(attr, $event)">
+  </mat-chip-list>
+</mat-form-field>

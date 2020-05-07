@@ -7,6 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class CascadeSelectComponent<T> implements OnInit {
   @Input() labelKey = 'name';
+  @Input() label = '请选择';
 
   @Input()
   get dataSource(): CascadeSelectOption<T>[] { return this._dataSource; }

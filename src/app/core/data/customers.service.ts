@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Customer} from './inmemory-data/customers';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +20,4 @@ export class CustomersService {
   addCustomer(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.baseUrl, customer);
   }
-}
-
-export interface Customer {
-  id?: number;
-  name: string;
 }

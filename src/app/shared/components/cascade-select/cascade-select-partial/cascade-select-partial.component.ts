@@ -8,6 +8,7 @@ import {CascadeSelectComponent, CascadeSelectOption} from '../cascade-select.com
 })
 export class CascadeSelectPartialComponent<T> implements OnInit {
   @Input() labelKey: string;
+  @Input() label: string;
   @Input() options: CascadeSelectOption<T>[] = [];
 
   selectedOption: CascadeSelectOption<T>;

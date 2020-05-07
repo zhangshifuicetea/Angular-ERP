@@ -38,7 +38,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) {
+    const token = this.authService.getToken();
+    if (token) {
       return true;
     }
 

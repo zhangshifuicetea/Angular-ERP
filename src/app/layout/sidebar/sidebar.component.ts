@@ -52,6 +52,7 @@ const navList: SideNavItem[] = [
     expand: false,
     children: [
       {title: '产品维护', path: '/products/maintain', link: true},
+      {title: '产品新增', path: '/products/edit', link: true},
     ]
   },
 ];

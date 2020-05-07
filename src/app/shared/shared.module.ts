@@ -20,6 +20,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { CascadeSelectComponent } from './components/cascade-select/cascade-select.component';
 import { CascadeSelectPartialComponent } from './components/cascade-select/cascade-select-partial/cascade-select-partial.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
 
 const material = [
   MatCommonModule,
@@ -40,6 +41,7 @@ const material = [
   MatGridListModule,
   MatProgressBarModule,
   MatSelectModule,
+  MatChipsModule,
 ];
 
 @NgModule({

@@ -6,12 +6,16 @@ import { ProductsComponent } from './products.component';
 import { MaintainComponent } from './maintain/maintain.component';
 import {SharedModule} from '../../shared/shared.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { EditComponent } from './edit/edit.component';
+import { SkuListComponent } from './edit/sku-list/sku-list.component';
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
-    MaintainComponent
+    MaintainComponent,
+    EditComponent,
+    SkuListComponent
   ],
   imports: [
     CommonModule,
