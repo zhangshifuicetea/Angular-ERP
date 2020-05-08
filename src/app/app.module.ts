@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {APP_INITIALIZER, NgModule} from '@angular/core';
-
+import {registerLocaleData} from '@angular/common';
+import zh from '@angular/common/locales/zh';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -16,6 +17,8 @@ import {SharedModule} from './shared/shared.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {httpInterceptorProviders} from './core/interceptors';
 import {StartupService} from './core/startup.service';
+
+registerLocaleData(zh);
 
 export function StartupServiceFactory(startupService: StartupService) {
   return () => startupService.load();

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCommonModule, MatRippleModule} from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -21,6 +21,12 @@ import { CascadeSelectComponent } from './components/cascade-select/cascade-sele
 import { CascadeSelectPartialComponent } from './components/cascade-select/cascade-select-partial/cascade-select-partial.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatTableModule} from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatSortModule} from '@angular/material/sort';
 
 const material = [
   MatCommonModule,
@@ -42,6 +48,12 @@ const material = [
   MatProgressBarModule,
   MatSelectModule,
   MatChipsModule,
+  MatTableModule,
+  CdkTableModule,
+  MatTabsModule,
+  MatBottomSheetModule,
+  MatPaginatorModule,
+  MatSortModule,
 ];
 
 @NgModule({
@@ -55,6 +67,7 @@ const material = [
     ...material,
   ],
   exports: [
+    FormsModule,
     ReactiveFormsModule,
     ...material,
     CascadeSelectComponent

@@ -1,11 +1,24 @@
-
 <div fxLayout="row wrap" fxLayoutAlign="start center">
   <span style="font-size: 16px; margin-right: 20px;">品类:</span>
   <app-cascade-select labelKey="key" [dataSource]="cascade" (selectedChange)="log($event)"></app-cascade-select>
-  <button mat-button color="primary" matTooltip="搜索"><mat-icon>search</mat-icon></button>
-  <button mat-button color="primary" matTooltip="新增产品" routerLink="../edit"><mat-icon>add_circle_outline</mat-icon></button>
+  <button mat-button color="primary" matTooltip="搜索" matTooltipPosition="above">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-button color="primary" matTooltip="新增产品" matTooltipPosition="above" routerLink="../edit">
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
 </div>
 
-<div fxLayout="row wrap" fxLayout.xs="column wrap">
+<div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="30px" style="margin-top: 30px;">
+  <mat-card class="product" fxFlex="20" fxFlex.xs="100" *ngFor="let product of products" (click)="openProductDetail(product)">
+    <img mat-card-image [src]="product.mainImage" [alt]="product.name">
+    <mat-card-content>
+      <p class="name">{{product.name}}</p>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div class="price">{{product.price | currency:'CNY':'symbol':'0.0-2':'zh-Hans'}}</div>
+        <div class="brand">{{product.brand}}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 
 </div>

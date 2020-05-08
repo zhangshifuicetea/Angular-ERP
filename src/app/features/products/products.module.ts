@@ -8,6 +8,8 @@ import {SharedModule} from '../../shared/shared.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { EditComponent } from './edit/edit.component';
 import { SkuListComponent } from './edit/sku-list/sku-list.component';
+import { SkuTableAttrValuePipe } from './edit/sku-list/sku-table-attr-value.pipe';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
@@ -15,13 +17,18 @@ import { SkuListComponent } from './edit/sku-list/sku-list.component';
     ProductsComponent,
     MaintainComponent,
     EditComponent,
-    SkuListComponent
+    SkuListComponent,
+    SkuTableAttrValuePipe,
+    DetailComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     ProductsRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+  ],
+  entryComponents: [
+    DetailComponent,
   ]
 })
 export class ProductsModule { }

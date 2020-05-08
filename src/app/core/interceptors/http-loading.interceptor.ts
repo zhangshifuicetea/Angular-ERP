@@ -19,15 +19,14 @@ export class HttpLoadingInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this._inProgressCount++;
-    if (!this.loadingService.show) {
-      this.loadingService.show = true;
-    }
+
+    this.loadingService.show();
 
     return next.handle(request).pipe(
       finalize(() => {
         this._inProgressCount--;
         if (this._inProgressCount === 0) {
-          this.loadingService.show = false;
+          this.loadingService.hide();
         }
       })
     );
