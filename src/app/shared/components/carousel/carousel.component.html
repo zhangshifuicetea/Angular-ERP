@@ -1,0 +1,9 @@
+<div class="content">
+  <img [src]="selectedImage">
+</div>
+
+<div class="arrow">
+    <mat-icon (click)="selectPic(selectedIndex - 1)">chevron_left</mat-icon>
+
+    <mat-icon (click)="selectPic(selectedIndex + 1)">chevron_right</mat-icon>
+</div>
