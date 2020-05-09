@@ -27,6 +27,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatSortModule} from '@angular/material/sort';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 const material = [
   MatCommonModule,
@@ -54,12 +56,14 @@ const material = [
   MatBottomSheetModule,
   MatPaginatorModule,
   MatSortModule,
+  MatButtonToggleModule,
 ];
 
 @NgModule({
   declarations: [
     CascadeSelectComponent,
-    CascadeSelectPartialComponent
+    CascadeSelectPartialComponent,
+    CarouselComponent
   ],
   imports: [
     CommonModule,
@@ -70,7 +74,8 @@ const material = [
     FormsModule,
     ReactiveFormsModule,
     ...material,
-    CascadeSelectComponent
+    CascadeSelectComponent,
+    CarouselComponent,
   ]
 })
 export class SharedModule { }

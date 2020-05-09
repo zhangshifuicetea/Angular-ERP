@@ -55,4 +55,13 @@ const navList: SideNavItem[] = [
       {title: '产品新增', path: '/products/edit', link: true},
     ]
   },
+  {
+    title: '项目',
+    path: 'projects',
+    icon: 'assignment',
+    expand: false,
+    children: [
+      {title: '项目看板', path: '/projects/kanban', link: true},
+    ]
+  },
 ];

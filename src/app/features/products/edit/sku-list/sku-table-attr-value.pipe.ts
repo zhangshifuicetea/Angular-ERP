@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {ProductSku} from './sku-list.component';
+import {ProductSku} from '../../../../core/data/inmemory-data/products';
 
 @Pipe({
   name: 'skuTableAttrValue'

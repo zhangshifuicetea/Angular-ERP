@@ -1,13 +1,14 @@
 <mat-toolbar color="primary" class="app-toolbar">
+  <img src="assets/images/logo.png" alt="logo" style="width: 100px;margin-right: 20px;">
   <button mat-icon-button (click)="toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <h1 class="app-name">Angular ERP</h1>
+<!--  <h1 class="app-name">Angular ERP</h1>-->
   <div class="spacer"></div>
   <a mat-icon-button class="github" href="https://github.com/zhangshifuicetea/Angular-ERP" target="_blank" rel="noopener">
     <img src="assets/images/github.svg" class="github">
   </a>
-  <button mat-icon-button (click)="fullscreen()" matTooltip="全屏">
+  <button [fxShow.xs]="false" mat-icon-button (click)="fullscreen()" matTooltip="全屏">
     <mat-icon *ngIf="!isFullscreen">fullscreen</mat-icon>
     <mat-icon *ngIf="isFullscreen">fullscreen_exit</mat-icon>
   </button>

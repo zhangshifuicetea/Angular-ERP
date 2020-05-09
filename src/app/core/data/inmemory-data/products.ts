@@ -35,7 +35,7 @@ export const products: Product[] = [
         skuCode: 'motor-4',
         attributes: [{type: '产地', value: '火星'}, {type: '动力', value: '电机'}],
         attributeValues: '火星,电机',
-        price: 1600000,
+        price: 160000,
         image: 'https://cdn.pixabay.com/photo/2014/09/24/21/30/harley-davidson-459594_1280.jpg',
       },
     ]
@@ -137,7 +137,6 @@ export interface Product {
   skuList: ProductSku[];
 }
 
-
 export const brands = ['品牌a', '品牌b', '品牌c'];
 export const categories = ['品类a', '品类b', '品类c'];
 export const attributes = ['规格', '颜色', '工艺'];
@@ -145,6 +144,7 @@ export const attributes = ['规格', '颜色', '工艺'];
 export interface AttributeValues {
   type: string;
   values: string[];
+  selectedValue?: string;
 }
 
 export interface AttributeValuePair {

@@ -51,7 +51,7 @@ export class MaintainComponent implements OnInit {
 
   openProductDetail(product: Product) {
     const dialogRef = this.dialog.open(DetailComponent, {
-      maxWidth: '800px',
+      maxWidth: '1200px',
       data: product
     });
 

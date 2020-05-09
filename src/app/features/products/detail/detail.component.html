@@ -1,1 +1,21 @@
-<p>detail works!</p>
+<div fxLayout="row" fxLayout.xs="column" [ngStyle]="{width: '1000px'}" [ngStyle.xs]="{width: '100%'}">
+  <app-carousel [images]="productImages" [selectedIndex]="selectedImageIndex"
+                [ngStyle]="{width: '50%', height: '360px'}" [ngStyle.xs]="{width: '100%', 'max-height': '300px'}"></app-carousel>
+
+  <div class="detail" [ngStyle]="{width: '50%', 'border-left': '1px dotted lightgray'}" [ngStyle.xs]="{width: '100%'}">
+    <h2 class="title">{{product.name}}</h2>
+    <p class="brand">{{product.brand}}</p>
+    <p class="category">{{product.category}}</p>
+    <div class="attributes">
+      <p *ngFor="let attr of attributes">
+        <span style="margin-right: 10px;">{{attr.type}}:</span>
+        <mat-button-toggle-group (valueChange)="selectSku(attr, $event)" appearance="legacy">
+          <mat-button-toggle [value]="a" *ngFor="let a of attr.values">{{a}}</mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+    </div>
+    <p class="price">{{selectedSku?.price | currency:'CNY':'symbol':'0.0-2':'zh-Hans'}}</p>
+    <p class="description">{{product.description}}</p>
+  </div>
+</div>
+

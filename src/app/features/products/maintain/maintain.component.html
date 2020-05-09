@@ -9,9 +9,12 @@
   </button>
 </div>
 
-<div fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="30px" style="margin-top: 30px;">
-  <mat-card class="product" fxFlex="20" fxFlex.xs="100" *ngFor="let product of products" (click)="openProductDetail(product)">
-    <img mat-card-image [src]="product.mainImage" [alt]="product.name">
+<div fxLayout="row wrap" fxLayoutGap="20px" style="margin-top: 30px;">
+  <mat-card class="product" fxFlex="0 0 calc(20% - 20px)" fxFlex.xs="0 0 100%" *ngFor="let product of products"
+            (click)="openProductDetail(product)" style="margin-bottom: 20px;">
+    <div class="image-wrapper">
+      <img [src]="product.mainImage" [alt]="product.name">
+    </div>
     <mat-card-content>
       <p class="name">{{product.name}}</p>
       <div fxLayout="row" fxLayoutAlign="space-between">
@@ -20,5 +23,4 @@
       </div>
     </mat-card-content>
   </mat-card>
-
 </div>

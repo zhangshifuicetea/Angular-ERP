@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+}
+
+.detail {
+  padding: 10px;
+  height: 100%;
+  .brand {
+    color: darkgrey;
+  }
+
+  .category {
+    color: darkgrey;
+  }
+
+  .attributes {
+    margin: 20px 0;
+  }
+
+  .price {
+    color: red;
+    font-size: 20px;
+  }
+}

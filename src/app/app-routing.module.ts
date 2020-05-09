@@ -18,6 +18,7 @@ const routes: Routes = [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'customers', loadChildren: () => import('./features/customers/customers.module').then(m => m.CustomersModule)},
       {path: 'products', loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule)},
+      {path: 'projects', loadChildren: () => import('./features/projects/projects.module').then(m => m.ProjectsModule)},
       {path: 'exception', loadChildren: () => import('./features/exception/exception.module').then(m => m.ExceptionModule)},
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]

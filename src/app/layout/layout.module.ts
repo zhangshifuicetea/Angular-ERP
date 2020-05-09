@@ -7,6 +7,7 @@ import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import { SideNavListComponent } from './side-nav-list/side-nav-list.component';
 import { PassportComponent } from './passport/passport.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PassportComponent } from './passport/passport.component';
     CommonModule,
     SharedModule,
     RouterModule,
+    FlexLayoutModule,
   ],
   exports: [
     LayoutComponent
