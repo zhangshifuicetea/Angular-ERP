@@ -1,0 +1,104 @@
+.projects-wrapper {
+  height: 100%;
+
+  .stage {
+    padding: 10px;
+    box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, 1px 0 0 0 #e8e8e8 inset, 0 1px 0 0 #e8e8e8 inset;
+    background-color: #eff1f3;
+    border-radius: 6px;
+
+    .title {
+      font-size: 16px;
+      //text-align: center;
+      display: flex;
+      padding-bottom: 10px;
+      align-items: center;
+      .spacer {
+        flex: 1;
+      }
+      .count {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgray;
+        border-radius: 50%;
+        margin-right: 5px;
+        font-size: 12px;
+      }
+    }
+
+    .project {
+      position: relative;
+      padding: 5px 5px 5px 26px;
+      cursor: move;
+      user-select: none;
+      border: 1px solid #e1e5e7;
+      border-radius: 4px;
+      background-color: #fff;
+      box-shadow: 0 1px 1px rgba(27, 31, 35, .1);
+      margin-bottom: 4px;
+      margin-top: 2px;
+
+      &:hover {
+        border-color: #d1d5da !important;
+        box-shadow: 0 1px 3px rgba(106, 115, 125, .3) !important;
+      }
+
+      .mat-icon {
+        position: absolute;
+        left: 6px;
+        top: 7px;
+        font-size: 16px;
+        color: gray;
+      }
+
+      .content {
+        margin-bottom: 10px;
+      }
+
+      .author {
+        font-size: 12px;
+      }
+    }
+
+  }
+}
+
+.cdk-drag-preview {
+  position: relative;
+  padding: 5px 5px 5px 26px;
+  cursor: move;
+  user-select: none;
+  border: 1px solid #e1e5e7;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 4px;
+  margin-top: 2px;
+  box-shadow: 0 1px 3px rgba(106, 115, 125, .3) !important;
+
+  .mat-icon {
+    position: absolute;
+    left: 6px;
+    top: 7px;
+    font-size: 16px;
+    color: gray;
+  }
+
+  .content {
+    margin-bottom: 10px;
+  }
+
+  .author {
+    font-size: 12px;
+  }
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

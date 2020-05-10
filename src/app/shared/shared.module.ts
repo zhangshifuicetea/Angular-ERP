@@ -29,6 +29,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {MatSortModule} from '@angular/material/sort';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const material = [
   MatCommonModule,
@@ -57,6 +58,7 @@ const material = [
   MatPaginatorModule,
   MatSortModule,
   MatButtonToggleModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({

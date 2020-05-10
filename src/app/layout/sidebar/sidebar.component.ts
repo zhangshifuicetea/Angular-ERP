@@ -46,6 +46,12 @@ const navList: SideNavItem[] = [
     link: true,
   },
   {
+    title: '报价',
+    path: '/customers/quote',
+    icon: 'store',
+    link: true,
+  },
+  {
     title: '产品',
     path: 'products',
     icon: 'local_offer',

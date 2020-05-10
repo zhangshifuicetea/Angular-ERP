@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Customer} from './inmemory-data/customers';
 
@@ -19,5 +19,14 @@ export class CustomersService {
 
   addCustomer(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.baseUrl, customer);
+  }
+
+  searchCustomers(term: string): Observable<Customer[]> {
+    term = term.trim();
+    // add safe, encoded search parameter if term is present
+    const options = term ?
+      { params: new HttpParams().set('name', term) } : {};
+
+    return this.http.get<Customer[]>(this.baseUrl, options);
   }
 }

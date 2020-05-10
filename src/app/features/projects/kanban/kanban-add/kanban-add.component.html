@@ -1,0 +1,14 @@
+<ng-container *ngIf="show">
+  <mat-form-field style="width: 100%; padding-bottom: 0;" appearance="outline">
+    <textarea autofocus #input matInput placeholder="添加任务" mat-autosize rows="2"></textarea>
+  </mat-form-field>
+
+  <div style="display: flex; margin-bottom: 10px;">
+    <button mat-flat-button color="primary" (click)="addProject(input.value, input)" [disabled]="!input.value"
+            style="flex: 1; margin-right: 10px;">添加
+    </button>
+    <button mat-flat-button style="flex: 1" (click)="hide()">取消</button>
+  </div>
+</ng-container>
+
+

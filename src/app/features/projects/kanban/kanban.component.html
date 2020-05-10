@@ -1,1 +1,24 @@
-<p>kanban works!</p>
+
+<div class="projects-wrapper" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="20px" cdkDropListGroup>
+  <div class="stage" fxFlex="0 0 calc(20% - 20px)" fxFlex.xs="0 0 60%" *ngFor="let stage of stages">
+    <div class="title">
+      <div class="count">{{stage.projects?.length}}</div>
+      {{stage.title}}
+      <div class="spacer"></div>
+      <button mat-icon-button (click)="addTask(stage, adder)"><mat-icon>add</mat-icon></button>
+    </div>
+
+    <div class="list" cdkDropList [cdkDropListData]="stage.projects" (cdkDropListDropped)="drop($event, stage)">
+      <app-kanban-add #adder [stage]="stage" style="display: block" (createProject)="createProject($event, stage)"></app-kanban-add>
+      <div class="project" cdkDrag *ngFor="let project of stage.projects">
+        <mat-icon>event</mat-icon>
+        <div class="content">
+          {{project.content}}
+        </div>
+        <div class="author">
+          <span style="color: darkgray">成员:</span> {{project.author}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

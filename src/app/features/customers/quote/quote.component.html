@@ -1,0 +1,111 @@
+<div fxLayout fxLayoutAlign="start center">
+  <mat-form-field appearance="standard" style="width: 100px">
+    <input matInput #partial placeholder="部件名称">
+  </mat-form-field>
+  <mat-form-field appearance="standard" style="width: 100px; margin-left: 10px;">
+    <input matInput #price type="number" placeholder="部件价格">
+  </mat-form-field>
+  <button mat-raised-button (click)="addPartial(partial.value, price.value); partial.value = ''; price.value = '';"
+          style="margin-left: 10px;" color="primary">添加
+  </button>
+</div>
+
+<table mat-table [dataSource]="partials" style="width: 100%;" class="mat-elevation-z1"
+       cdkDropList [cdkDropListData]="partials" (cdkDropListDropped)="drop($event)">
+  <ng-container matColumnDef="index">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let row">
+      <!-- <div class="drag-handler">
+         <span class="index">{{row.index}}</span>
+         <span class="drag"><mat-icon>move</mat-icon></span>
+       </div>
+   -->
+      {{row.index}}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>名称</th>
+    <td mat-cell *matCellDef="let row">{{row.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="usage">
+    <th mat-header-cell *matHeaderCellDef>用途</th>
+    <td mat-cell *matCellDef="let row">
+      <!--<mat-form-field style="width: 80px;">
+        <mat-select [(value)]="row.usage">
+          <mat-option *ngFor="let option of usageOptions" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>-->
+      <select [(ngModel)]="row.usage" style="width: 80px">
+        <option *ngFor="let option of usageOptions" [value]="option">
+          {{option}}
+        </option>
+      </select>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="width">
+    <th mat-header-cell *matHeaderCellDef>宽度</th>
+    <td mat-cell *matCellDef="let row">
+      <input type="number" [(ngModel)]="row.width">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="height">
+    <th mat-header-cell *matHeaderCellDef>高度</th>
+    <td mat-cell *matCellDef="let row">
+      <input type="number" [(ngModel)]="row.height">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="count">
+    <th mat-header-cell *matHeaderCellDef>数量</th>
+    <td mat-cell *matCellDef="let row">
+      <input type="number" [(ngModel)]="row.count">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="factor">
+    <th mat-header-cell *matHeaderCellDef>系数</th>
+    <td mat-cell *matCellDef="let row">
+      <input type="number" [(ngModel)]="row.factor">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>单价</th>
+    <td mat-cell *matCellDef="let row">
+      {{row.price | currency:'CNY':'symbol':'0.0-2':'zh-Hans'}}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalPrice">
+    <th mat-header-cell *matHeaderCellDef>总价</th>
+    <td mat-cell *matCellDef="let row" style="color: palevioletred">
+      {{row.totalPrice | currency:'CNY':'symbol':'0.0-2':'zh-Hans'}}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="remark">
+    <th mat-header-cell *matHeaderCellDef>备注</th>
+    <td mat-cell *matCellDef="let row">
+      <input type="text" style="width: auto;" [(ngModel)]="row.remark">
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>操作</th>
+    <td mat-cell *matCellDef="let row">
+      <mat-icon style="cursor: pointer; color: darkgray; font-size: 16px; position: relative; top: 5px;" matTooltip="删除">
+        delete_outline
+      </mat-icon>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
