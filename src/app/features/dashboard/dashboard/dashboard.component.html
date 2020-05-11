@@ -1,13 +1,143 @@
-<!--<mat-grid-list cols="4" gutterSize="10px" rowHeight="fit" [style.min-height.px]="120">-->
-<!--  <mat-grid-tile style="background-color: #00b7ff"></mat-grid-tile>-->
-<!--  <mat-grid-tile style="background-color: pink"></mat-grid-tile>-->
-<!--  <mat-grid-tile style="background-color: darkseagreen"></mat-grid-tile>-->
-<!--  <mat-grid-tile style="background-color: lightyellow"></mat-grid-tile>-->
-<!--</mat-grid-list>-->
 
-<div fxLayout fxLayout.xs="column" fxLayoutGap="10px" style="height: 300px;">
-  <div fxFlex="25" style="background-color: #00b7ff"></div>
-  <div fxFlex="25" style="background-color: pink"></div>
-  <div fxFlex="25" style="background-color: darkseagreen"></div>
-  <div fxFlex="25" style="background-color: lightyellow"></div>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+  <mat-card fxFlex="50">
+    <mat-card-subtitle>Tasks</mat-card-subtitle>
+    <mat-card-content>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let task of tasks">
+          <mat-icon matListIcon>bookmark_border</mat-icon>
+          {{task}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="50">
+    <mat-card-subtitle>Global Sales by Region</mat-card-subtitle>
+    <mat-card-content>
+      <table mat-table [dataSource]="sales" dense style="width: 100%;">
+        <ng-container matColumnDef="avatar">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element">
+            <img [src]="'assets/images/' + element.avatar + '.png'" style="width: 28px;height: 28px;">
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sales">
+          <th mat-header-cell *matHeaderCellDef> Total Sales </th>
+          <td mat-cell *matCellDef="let element"> {{element.sales}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="change">
+          <th mat-header-cell *matHeaderCellDef> Change </th>
+          <td mat-cell *matCellDef="let element"> {{element.change}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="direction">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon *ngIf="element.direction === 'down'">expand_more</mat-icon>
+            <mat-icon *ngIf="element.direction === 'up'">expand_less</mat-icon>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" style="margin-top: 10px;">
+  <mat-card fxFlex="60">
+    <mat-card-subtitle>Market</mat-card-subtitle>
+    <mat-card-content>
+      <div id="chart1"></div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="40">
+    <mat-card-subtitle>Branch</mat-card-subtitle>
+    <mat-card-content>
+      <div id="chart2"></div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutAlign.xs="start stretch" fxLayoutGap="10px" style="margin-top: 10px;">
+  <mat-card fxFlex="70">
+    <mat-card-subtitle>News</mat-card-subtitle>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Cowboy Bebop">
+          <div fxLayoutAlign="center">
+            <img style="width: 300px;margin: 10px 0;" src="assets/images/news2.svg">
+          </div>
+          <h2>Aenean viverra arcu nec pellentesque ultrices. In erat purus, adipiscing nec lacinia
+            at, ornare ac eros.
+          </h2>
+          <p>
+            ullam at risus metus. Quisque nisl purus, pulvinar ut mauris vel, elementum suscipit
+            eros. Praesent
+            ornare ante massa, egestas pellentesque orci convallis ut. Curabitur consequat
+            convallis est, id luctus
+            mauris lacinia vel. Nullam tristique lobortis mauris, ultricies fermentum lacus
+            bibendum id. Proin non
+            ante tortor. Suspendisse pulvinar ornare tellus nec pulvinar. Nam pellentesque
+            accumsan mi, non
+            pellentesque sem convallis sed. Quisque rutrum erat id auctor gravida.
+          </p>
+        </mat-tab>
+
+        <mat-tab label="Attack on Titan">
+          <div fxLayoutAlign="center">
+            <img style="width: 300px;margin: 10px 0;" src="assets/images/news1.svg">
+          </div>
+          <h2>Vestibulum vitae diam nec odio dapibus placerat. Ut ut lorem justo.</h2>
+          <p>
+            Fusce bibendum augue nec fermentum tempus. Sed laoreet dictum tempus. Aenean ac sem
+            quis nulla malesuada
+            volutpat. Nunc vitae urna pulvinar velit commodo cursus. Nullam eu felis quis diam
+            adipiscing hendrerit
+            vel ac turpis. Nam mattis fringilla euismod. Donec eu ipsum sit amet mauris iaculis
+            aliquet. Quisque sit
+            amet feugiat odio. Cras convallis lorem at libero lobortis, placerat lobortis sapien
+            lacinia. Duis sit
+            amet elit bibendum sapien dignissim bibendum.
+          </p>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="30">
+    <mat-card-subtitle>Message</mat-card-subtitle>
+    <mat-card-content fxLayout="column">
+      <mat-form-field>
+        <mat-label>District</mat-label>
+        <mat-select>
+          <mat-option value="Aues">Auex</mat-option>
+          <mat-option value="Zuer">Zuer</mat-option>
+          <mat-option value="Violuat">Violuat</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input type="text" matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Content</mat-label>
+        <textarea matInput rows="6" mat-autosize></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">Confirm</button>
+    </mat-card-content>
+  </mat-card>
 </div>
