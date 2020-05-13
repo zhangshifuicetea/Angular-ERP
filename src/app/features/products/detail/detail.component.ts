@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {AttributeValues, Product, ProductSku} from '../../../core/data/inmemory-data/products';
 
@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
   }
 
   selectSku(attr: AttributeValues, val: string) {
-    console.log(attr, val);
+    // console.log(attr, val);
     attr.selectedValue = val;
     const skuValues = (this.attributes || []).map(a => a.selectedValue).join(',');
     const sku = this.product.skuList.find(s => s.attributeValues === skuValues);
@@ -34,4 +34,7 @@ export class DetailComponent implements OnInit {
     }
   }
 
+  close() {
+    this.dialogRef.close();
+  }
 }

@@ -46,7 +46,7 @@ export class MaintainComponent implements OnInit {
   }
 
   log(msg: any) {
-    window.console.log(msg);
+    // window.console.log(msg);
   }
 
   openProductDetail(product: Product) {

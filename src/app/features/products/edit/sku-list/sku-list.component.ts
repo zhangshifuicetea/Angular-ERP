@@ -36,7 +36,7 @@ export class SkuListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.skuTable, 'table');
+    // console.log(this.skuTable, 'table');
   }
 
   attributesChange(attrs: string[]) {
@@ -74,7 +74,7 @@ export class SkuListComponent implements OnInit, AfterViewInit {
       return attributeValues.values.map(val => ({type: attributeValues.type, value: val}));
     }).filter(line => line && line.length > 0);
     this.skuAttributes = calCartesianProduct(source);
-    console.log(this.skuAttributes, 'skuattrs');
+    // console.log(this.skuAttributes, 'skuattrs');
     if (this.skuAttributes && this.skuAttributes.length > 0) {
       this.genSkuList();
     }
@@ -102,7 +102,7 @@ export class SkuListComponent implements OnInit, AfterViewInit {
     });
     this.skuList = skus;
     this.displayedColumns = ['skuCode', ...this.selectedAttrs, 'price'];
-    console.log(skus, 'skus');
+    // console.log(skus, 'skus');
   }
 
 }

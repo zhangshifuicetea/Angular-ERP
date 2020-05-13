@@ -22,7 +22,7 @@ export class LoggerInterceptor implements HttpInterceptor {
       finalize(() => {
         const elapsed = Date.now() - started;
         const msg = `${request.method} "${request.urlWithParams}" ${ok} in ${elapsed}ms.`;
-        console.log(msg);
+        // console.log(msg);
       })
     );
   }

@@ -3,8 +3,8 @@
 
   .stage {
     padding: 10px;
-    box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, 1px 0 0 0 #e8e8e8 inset, 0 1px 0 0 #e8e8e8 inset;
-    background-color: #eff1f3;
+    box-shadow: 1px 0 0 0 #333, 0 1px 0 0 #333, 1px 1px 0 0 #333, 1px 0 0 0 #333 inset, 0 1px 0 0 #333 inset;
+    background-color: #414141;
     border-radius: 6px;
 
     .title {
@@ -22,7 +22,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: lightgray;
+        background-color: #292929;
         border-radius: 50%;
         margin-right: 5px;
         font-size: 12px;
@@ -34,16 +34,16 @@
       padding: 5px 5px 5px 26px;
       cursor: move;
       user-select: none;
-      border: 1px solid #e1e5e7;
+      border: 1px solid #565656;
       border-radius: 4px;
-      background-color: #fff;
+      background-color: #3c3c3c;
       box-shadow: 0 1px 1px rgba(27, 31, 35, .1);
       margin-bottom: 4px;
       margin-top: 2px;
 
       &:hover {
         border-color: #d1d5da !important;
-        box-shadow: 0 1px 3px rgba(106, 115, 125, .3) !important;
+        box-shadow: 0 1px 3px #ffd740 !important;
       }
 
       .mat-icon {
@@ -71,12 +71,12 @@
   padding: 5px 5px 5px 26px;
   cursor: move;
   user-select: none;
-  border: 1px solid #e1e5e7;
+  border: 1px solid #565656;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #3c3c3c;
   margin-bottom: 4px;
   margin-top: 2px;
-  box-shadow: 0 1px 3px rgba(106, 115, 125, .3) !important;
+  box-shadow: 0 1px 3px #ffd740 !important;
 
   .mat-icon {
     position: absolute;

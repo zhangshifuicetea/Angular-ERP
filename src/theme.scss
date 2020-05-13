@@ -1,0 +1,11 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$apollo-app-primary: mat-palette($mat-light-blue);
+$apollo-app-accent: mat-palette($mat-amber, A200, A100, A400);
+$apollo-app-warn: mat-palette($mat-red);
+
+$apollo-app-theme: mat-dark-theme($apollo-app-primary, $apollo-app-accent, $apollo-app-warn);
+
+@include angular-material-theme($apollo-app-theme)

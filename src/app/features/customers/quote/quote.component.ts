@@ -8,7 +8,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class QuoteComponent implements OnInit {
   partials: ProductPartial[] = partials.map(p =>
-    (new ProductPartial(p.name, p.index, p.price, p.width, p.height, p.count, p.factor, p.remark, p.usage)));
+    (new ProductPartial(p.id, p.name, p.index, p.price, p.width, p.height, p.count, p.factor, p.remark, p.usage)));
   displayedColumns = ['index', 'name', 'usage', 'width', 'height', 'count', 'factor', 'price', 'totalPrice', 'remark', 'action'];
   usageOptions = ['机体', '动力总成', '外机装甲'];
 
@@ -37,7 +37,7 @@ export class QuoteComponent implements OnInit {
     }
     const p: number = +price;
     const len = (this.partials || []).length + 1;
-    const newPartial = new ProductPartial(name, len, p);
+    const newPartial = new ProductPartial((+Date.now()), name, len, p);
     newPartial.calTotalPrice();
     this.partials = this.partials.concat(newPartial);
   }
@@ -64,10 +64,10 @@ interface Partial {
 }
 
 export class ProductPartial implements Partial {
-  id: number = +Date.now();
   totalPrice = 0;
 
   constructor(
+    public id: number,
     public name: string,
     public index: number,
     public price = 0,
