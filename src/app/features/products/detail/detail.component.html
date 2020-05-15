@@ -1,8 +1,8 @@
 <div fxLayout="row" fxLayout.xs="column" [ngStyle]="{width: '1000px'}" [ngStyle.xs]="{width: '100%'}">
   <app-carousel [images]="productImages" [selectedIndex]="selectedImageIndex"
-                [ngStyle]="{width: '50%', height: '360px'}" [ngStyle.xs]="{width: '100%', 'max-height': '300px'}"></app-carousel>
+                [ngStyle]="{width: '50%', height: '360px', 'border-right': '1px dashed gray'}" [ngStyle.xs]="{width: '100%', 'max-height': '300px'}"></app-carousel>
 
-  <div class="detail" [ngStyle]="{width: '50%', 'border-left': '1px dotted lightgray'}" [ngStyle.xs]="{width: '100%'}">
+  <div class="detail" [ngStyle]="{width: '50%'}" [ngStyle.xs]="{width: '100%'}">
     <h2 class="title">{{product.name}}</h2>
     <p class="brand">{{product.brand}}</p>
     <p class="category">{{product.category}}</p>
@@ -16,11 +16,10 @@
     </div>
     <p class="price">{{selectedSku?.price | currency:'CNY':'symbol':'0.0-2':'zh-Hans'}}</p>
     <p class="description">{{product.description}}</p>
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="close()" color="primary">确认</button>
+      <button mat-button (click)="close()">返回</button>
+    </div>
   </div>
 </div>
-
-<div mat-dialog-actions>
-  <button mat-button (click)="close()" color="primary">确认</button>
-  <button mat-button (click)="close()">返回</button>
-</div>
-

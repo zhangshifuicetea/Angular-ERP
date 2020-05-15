@@ -45,6 +45,6 @@ export class AuthService {
   logout() {
     this.removeToken();
     this.redirectUrl = undefined;
-    this.router.navigate(['/passport/login']);
+    window.location.href = 'http://angular.chandler.cool/passport/login';
   }
 }

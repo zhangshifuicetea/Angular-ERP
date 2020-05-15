@@ -1,11 +1,14 @@
 <mat-toolbar color="primary" class="app-toolbar">
-  <img src="assets/images/logo.png" alt="logo" style="width: 100px;margin-right: 20px;">
+  <a routerLink="/" fxLayout fxLayoutAlign="start center" class="logo">
+    <img src="assets/images/logo.png" alt="logo" style="width: 100px;margin-right: 20px;">
+  </a>
   <button mat-icon-button (click)="toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-<!--  <h1 class="app-name">Angular ERP</h1>-->
+  <!--  <h1 class="app-name">Angular ERP</h1>-->
   <div class="spacer"></div>
-  <a mat-icon-button class="github" href="https://github.com/zhangshifuicetea/Angular-ERP" target="_blank" rel="noopener">
+  <a mat-icon-button class="github" href="https://github.com/zhangshifuicetea/Angular-ERP" target="_blank"
+     rel="noopener">
     <img src="assets/images/github.svg" class="github">
   </a>
   <button [fxShow.xs]="false" mat-icon-button (click)="fullscreen()" matTooltip="全屏">
@@ -14,13 +17,13 @@
   </button>
   <button mat-button class="avatar" [matMenuTriggerFor]="logoutmenu">
     <img src="assets/images/avatar.jpg">
-     张师傅
+    张师傅
   </button>
   <mat-menu #logoutmenu="matMenu">
-    <button mat-menu-item>
+    <a mat-menu-item href="http://resume.chandler.cool" target="_blank" rel="noopener">
       <mat-icon>account_circle</mat-icon>
       <span>个人信息</span>
-    </button>
+    </a>
     <button mat-menu-item (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
       <span>登出</span>

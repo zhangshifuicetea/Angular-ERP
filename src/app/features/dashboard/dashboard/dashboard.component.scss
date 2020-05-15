@@ -1,5 +1,51 @@
-:host ::ng-deep {
-  .mat-card-subtitle {
-    //margin-bottom: 0;
+.statistic {
+  padding: 10px 10px 20px;
+  position: relative;
+  overflow: hidden;
+  .mat-icon {
+    position: absolute;
+    opacity: 0.5;
+    right: 5px;
+    bottom: 0;
+    font-size: 42px;
+    width: 42px;
+    height: 42px;
   }
+
+  .title {
+    line-height: 20px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .numbers {
+    line-height: 31px;
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .ratios {
+    line-height: 20px;
+    font-size: 14px;
+    text-align: left;
+    opacity: 0.95;
+  }
+  &.sales {
+    background-image: linear-gradient(240deg, #ff7295 0%, #fe875d 100%);
+  }
+
+  &.views {
+    background-image: linear-gradient(240deg, #00aadf 0%, #0071bc 100%)
+
+  }
+
+  &.users {
+    background-image: linear-gradient(240deg, #4b7ecf 0%, #8e70ee 100%);
+
+  }
+
+
 }
