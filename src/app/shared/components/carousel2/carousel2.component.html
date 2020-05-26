@@ -1,0 +1,12 @@
+<div class="carousel" [style.width.px]="width">
+  <div class="track" #track [style.left.px]="-width" [style.width.px]="width * imageUrls.length">
+    <div class="image" *ngFor="let url of imageUrls" [style.width.px]="width">
+      <img [src]="url" alt="图片">
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="prev" (click)="move(-1)"><mat-icon>chevron_left</mat-icon></div>
+    <div class="next" (click)="move(1)"><mat-icon>chevron_right</mat-icon></div>
+  </div>
+</div>

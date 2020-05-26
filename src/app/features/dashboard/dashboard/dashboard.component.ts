@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   tasks: string[] = ['Sales Reports', 'Client Meeting', 'Generate Charts', 'Pay Invoices', 'Save the World'];
   sales: Sales[] = sales;
   displayedColumns = ['avatar', 'country', 'sales', 'change', 'direction'];
+  images = ['assets/images/motor/1.jpg', 'assets/images/motor/2.jpg', 'assets/images/motor/3.jpg', 'assets/images/motor/4.jpg'];
 
   constructor() { }
 

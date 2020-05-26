@@ -30,6 +30,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { Carousel2Component } from './components/carousel2/carousel2.component';
 
 const material = [
   MatCommonModule,
@@ -65,7 +66,8 @@ const material = [
   declarations: [
     CascadeSelectComponent,
     CascadeSelectPartialComponent,
-    CarouselComponent
+    CarouselComponent,
+    Carousel2Component
   ],
   imports: [
     CommonModule,
@@ -78,6 +80,7 @@ const material = [
     ...material,
     CascadeSelectComponent,
     CarouselComponent,
+    Carousel2Component,
   ]
 })
 export class SharedModule { }
